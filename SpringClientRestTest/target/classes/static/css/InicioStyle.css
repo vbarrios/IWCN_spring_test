@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+    background-color: #4CAF50;
+    width: 100%;
+	text-align: center;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    width: 100%;
+    text-align: center;
+	border: 2px solid black;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}	

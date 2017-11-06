@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Detalles</title>
+</head>
+<body>
+  Nombre: <span th:text="${product.name}"></span> <br/>
+  Referencia:<span th:text="${product.getReference()}"></span><br/>
+  Precio (€):<span th:text="${product.price}"></span><br/>
+  Stock:<span th:text="${product.stock}"></span><br/>
+  
+  <br/>
+<div class="container" style="align-self: middle">
+  <a type="button" th:href="@{/ListaDeProductos}" class="btn btn-success">Volver</a>
+</div>
+
+</body>
+</html>

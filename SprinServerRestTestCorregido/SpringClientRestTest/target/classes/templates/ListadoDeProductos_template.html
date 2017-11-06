@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+		<title>Listado de Productos</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="../../css/InicioStyle.css" th:href="@{/css/InicioStyle.css}"/>
+		
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+<div class="header">
+	  <h1>Lista de Productos</h1>
+</div>
+
+<table id="customers">
+  <tr>
+    <th>Producto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr th:each="producto:${ListaProductos}">
+    <td th:text="${producto.name}"></td>
+    <td><a th:href="@{/MostrarProducto/{optionname}(optionname=${producto.id})}"> Mostrar </a></td>
+    <td><a th:href="@{/EditarProducto/{optionname}(optionname=${producto.id})}"> Editar </a></td>
+    <td><a th:href="@{/BorrarProducto/{optionname}(optionname=${producto.id})}"> Borrar </a></td>
+  </tr>
+  
+</table>
+<br/>
+<div class="container" style="align-self: middle">
+  <a type="button" th:href="@{/Inicio}" class="btn btn-success">Volver</a>
+</div>
+
+</body>
+</html>

@@ -93,6 +93,7 @@ import com.iwcn.master.repositories.ProductoRepository;
         assertEquals(dataBaseServices.getAll().size(), 2);
         Producto p2 = dataBaseServices.getProduct(2);
         dataBaseServices.editProduct("p3",3,3,3,2);
+	allProducts.add(p2);
         assertEquals(dataBaseServices.getAll().size(), 2);
         verify(productoRepository).save(p2);
 		imprimir("editProduct ok");
